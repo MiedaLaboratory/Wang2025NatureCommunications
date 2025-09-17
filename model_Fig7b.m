@@ -34,7 +34,7 @@ for r = 1:length(K_AtoB_ratio_list)
             theta_B(1) = 0.1;
 
             for k = 1:length(t)-1
-                dtheta_A = omega_A + K_BtoA * sin(theta_B(k) - theta_A(k)) - K_VIP*max(sin(theta_B(k)), 0)*max(sin(theta_A(k)- 3*pi/2), 0); 
+                dtheta_A = omega_A + K_BtoA * sin(theta_B(k) - theta_A(k)) - K_VIP*max(sin(theta_B(k)), 0)*max(sin(theta_A(k)- 1*pi/2), 0); 
                 % change above term (1*pi/2) for Sup.Fig.11a (0*pi/2), Sup.Fig.11b (2*pi/2), and Sup.Fig.11c (3*pi/2) 
                 dtheta_B = omega_B + K_AtoB * sin(theta_A(k) - theta_B(k));
                 theta_A(k+1) = theta_A(k) + dtheta_A * dt;
@@ -102,3 +102,4 @@ for r = 1:length(K_AtoB_ratio_list)
     title(['ensemble period (K_{A→nA} = ', num2str(ratio), '×K_{nA→A})']);
     set(gca,'Color', [0.5 0.5 0.5]); % NaN -> gray
 end
+
