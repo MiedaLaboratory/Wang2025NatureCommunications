@@ -1,3 +1,3 @@
-# Wang2025NatureCommunications
+# Wang2026NatureCommunications
 
 Simulation code for Wang et al. Neuronal feedback loop of the suprachiasmatic nucleus generates robust circadian rhythms. Nature Communications. DOI: XX
