@@ -70,7 +70,7 @@ for r = 1:length(K_AtoB_ratio_list)
     subplot(3, 5, r);
     h1 = imagesc(K_VIP_values, K_BtoA_values, per_A_map, 'AlphaData', ~isnan(per_A_map));
     set(gca, 'YDir', 'normal');
-    colormap(gca, 'jet');
+    colormap(gca, [0 0 0; parula(255)]);
     clim([22, 26]);
     colorbar;
     xlabel('K_{VIP}');
@@ -82,7 +82,7 @@ for r = 1:length(K_AtoB_ratio_list)
     subplot(3, 5, r+5);
     h2 = imagesc(K_VIP_values, K_BtoA_values, per_B_map, 'AlphaData', ~isnan(per_B_map));
     set(gca, 'YDir', 'normal');
-    colormap(gca, 'jet');
+    colormap(gca, [0 0 0; parula(255)]);
     clim([22, 26]);
     colorbar;
     xlabel('K_{VIP}');
@@ -94,7 +94,7 @@ for r = 1:length(K_AtoB_ratio_list)
     subplot(3, 5, r+10);
     imagesc(K_VIP_values, K_BtoA_values, sync_map, 'AlphaData', ~isnan(sync_map));
     set(gca, 'YDir', 'normal');
-    colormap(gca, [0 0 0; jet(256)]); % black (not synced), jet(synced)
+    colormap(gca, [0 0 0; parula(255)]); % black (not synced), jet(synced)
     clim([22, 26]);
     colorbar;
     xlabel('K_{VIP}');
@@ -102,4 +102,5 @@ for r = 1:length(K_AtoB_ratio_list)
     title(['ensemble period (K_{A→nA} = ', num2str(ratio), '×K_{nA→A})']);
     set(gca,'Color', [0.5 0.5 0.5]); % NaN -> gray
 end
+
 
