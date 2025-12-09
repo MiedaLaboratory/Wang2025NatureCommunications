@@ -71,7 +71,7 @@ for r = 1:length(K_AtoB_ratio_list)
     h1 = imagesc(K_VIP_values, K_BtoA_values, per_A_map, 'AlphaData', ~isnan(per_A_map));
     set(gca, 'YDir', 'normal');
     colormap(gca, [0 0 0; parula(255)]);
-    clim([22, 26]);
+    clim([22.5, 25]); % optimized the range for the parula colormap
     colorbar;
     xlabel('K_{VIP}');
     ylabel('K_{nA→A}');
@@ -83,7 +83,7 @@ for r = 1:length(K_AtoB_ratio_list)
     h2 = imagesc(K_VIP_values, K_BtoA_values, per_B_map, 'AlphaData', ~isnan(per_B_map));
     set(gca, 'YDir', 'normal');
     colormap(gca, [0 0 0; parula(255)]);
-    clim([22, 26]);
+    clim([22.5, 25]);
     colorbar;
     xlabel('K_{VIP}');
     ylabel('K_{nA→A}');
@@ -95,13 +95,14 @@ for r = 1:length(K_AtoB_ratio_list)
     imagesc(K_VIP_values, K_BtoA_values, sync_map, 'AlphaData', ~isnan(sync_map));
     set(gca, 'YDir', 'normal');
     colormap(gca, [0 0 0; parula(255)]); % black (not synced), parula(synced)
-    clim([22, 26]);
+    clim([22.5, 25]);
     colorbar;
     xlabel('K_{VIP}');
     ylabel('K_{nA→A}');
     title(['ensemble period (K_{A→nA} = ', num2str(ratio), '×K_{nA→A})']);
     set(gca,'Color', [0.5 0.5 0.5]); % NaN -> gray
 end
+
 
 
 
